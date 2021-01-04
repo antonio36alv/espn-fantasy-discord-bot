@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import date
+# from datetime import date
+import datetime
 
 # date = str(date.today()).replace("-", "")
 date = "20201225"
@@ -24,3 +25,6 @@ for x in live:
     aS = x.find_all("a")
     sp = x.find_all("span")
     print(f"{sp[0].text.strip()} {aS[1].text} @ {aS[3].text}")
+
+for x in range(6):
+    nextDate = date + datetime.timedelta(days = x)
